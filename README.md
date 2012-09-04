@@ -1,6 +1,6 @@
-# Seinfeld Calendar
+# Kata Chain
 
-Track your OSS Productivity with GitHub.
+Track your code katas with GitHub.
 
 http://lifehacker.com/software/motivation/jerry-seinfelds-productivity-secret-281626.php
 
@@ -21,12 +21,12 @@ http://lifehacker.com/software/motivation/jerry-seinfelds-productivity-secret-28
 
 * Once you add a user, it will be accessible like so:
 
-    $ open http://localhost:9292/~technoweenie
+    $ open http://localhost:9292/~rossfuhrman
 
 * Add a user from GitHub.
 
-    $ rake seinfeld:add USER=technoweenie
+    $ rake katachain:add USER=rossfuhrman
 
 * Update all progresses from GitHub, should be ran nightly.
 
-    $ rake seinfeld:update USER=
+    $ rake katachain:update USER=

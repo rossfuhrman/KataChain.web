@@ -2,58 +2,71 @@
   %head
     %title Calendar About Nothing: Tracking Open Source Contributions
     %link{:rel => 'icon', :type => 'image/png', :href => '/images/x_1.png', :sizes => '48x48'}
-    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/main.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/bootstrap.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/bootstrap-responsive.css'}
   %body
-    .title Calendar About Nothing
-    .subtitle Tracking Open Source Contributions
-    #borderedMain
-      #content
-        %h1 What is this?
-        %p
-          The Calendar About Nothing generates a 
-          "<a href="http://lifehacker.com/software/motivation/jerry-seinfelds-productivity-secret-281626.php">Seinfeld Calendar</a>"
-          from your public
-          "<a href="https://github.com">GitHub</a>" feed.
-        %p
-          %strong Commit
-          to an open source project: get an 
-          %strong X
-          for the day.
-          Commit tomorrow, and start building up your
-          %strong streak.
-        %p
-          %strong Get started
-          by 
-          %a{:href => '/edit'} authorizing CAN with your GitHub profile.
-
-        %h2 Groups!
+  .container
+    .hero-unit
+      %h1
+        Kata Chain
+        %p Code Katas meet Seinfeld's "Don't Break the Chain"
+    .row
+      .span6
+        %h4 Kata
         %p 
-          Kyle recently added the ability to view stacked calendars from multiple users.  For instance, here's what the
-          %a{:href => "/group/mojombo,defunkt,pjhyett,schacon,tekkub,rtomayko,kneath,holman,technoweenie"} GitHub calendar
-          looks like.
-
+          From
+          %a{:href => "http://en.wikipedia.org/wiki/Kata_(programming)"}Wikipedia:
+          Code Kata is a term coined by Dave Thomas, co-author of the book The Pragmatic Programmer, in a bow to the Japanese concept of kata in the martial arts. A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.
+      .span6
+        %h4 Chain
+        %p 
+          From 
+          %a{:href => "http://lifehacker.com/5886128/how-seinfelds-productivity-secret-fixed-my-procrastination-problem"}Lifehacker, 
+          Don't Break the Chain is: "spend some amount of time doing a desired activity (code kata) every day and, when you do, cross off that day on a calendar. This creates a chain of Xs showing your progress. If you don't do your specified task on one day, you don't get an X and that chain is broken."
+    .hero-unit
+      %p 
+        KataChain automates the crossing off of the day for you (although you can do it yourself as well if it suits you). 
+        %a{:href => '/edit', :class => "btn btn-primary btn-large"} Authorize KataChain for GitHub
+        then
+        %a{:href => 'https://github.com/KataChain/KataChain', :target => "_blank", :class => "btn btn-primary btn-large"} Fork Katachain 
+      %p Now commit your kata to GitHub every day. While 365 days, or forever for that matter are great goals, they might be a bit daunting. Therefore, a 60-day challenge has been added. Try it for 60-days and I guarantee you will see improvement. Below are some individuals that have already started.
+    .row
+      .span4
+        %h4 Current Streaks
+        %ul
+          %li 3
+          %li 3
+          %li 3
+          %li 3
+          %li 3
+          %li 3
+      .span4
+        %h4 60 Day Club
+        %ul
+          %li bob
+          %li bob
+          %li bob
+          %li bob
+          %li bob
+          %li bob
+      .span4
+        %h4 Longest Streaks
+        %ul
+          %li 999
+          %li 999
+          %li 999
+          %li 999
+          %li 999
+          %li 999
+    .row
+      .span12
         %h2 How can I help?
         %p 
-          We have the ruby source code 
-          %a{:href => "https://github.com/technoweenie/seinfeld/tree/master"} on the githubs.
+          We have the ruby source code for KataChain
+          %a{:href => "https://github.com/rossfuhrman/katachain/tree/master"} on the githubs.
           Join in, it's a fun little 
           %a{:href => "http://www.sinatrarb.com"} Sinatra
           app!
+          This app is largely based on the work of 
+          %a{:href => "https://github.com/technoweenie/seinfeld"} Calendar About Nothing.
 
-        .clearfix
-          #recentUsers
-            %h2 Current Streaks
-            %ul
-              - @recent_users.each do |user|
-                %li
-                  = link_to_user user
-          #userRecords
-            %h2 Longest Streaks
-            %ul
-              - @alltime_users.each do |user|
-                %li
-                  = link_to_user user, :longest_streak
-    #main
-      #content.footnote 
-        %a{:href => "http://calendaraboutnothing.com"} Calendar About Nothing
-        by <a href="http://techno-weenie.net">rick</a> and <a href="http://warpspire.com/">kyle</a> / <a href="https://github.com">GitHub</a>
