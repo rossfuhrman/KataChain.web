@@ -45,6 +45,7 @@ class Seinfeld
       cache_for 5.minutes
       @recent_users  = Seinfeld::User.best_current_streak
       @alltime_users = Seinfeld::User.best_alltime_streak
+      @sixty_users = Seinfeld::User.best_60_streak
       haml :index
     end
 
@@ -176,7 +177,11 @@ class Seinfeld
       end
 
       def link_to_user(user, streak_count = :current_streak)
-        %(<a href="/~#{user.login}">#{user.login} (#{user.send(streak_count)})</a>)
+        login_display = user.login
+        if login_display.length > 25 
+          login_display = login_display[0,24] + '...'
+        end
+        %(<a href="/~#{user.login}">#{login_display} (#{user.send(streak_count)})</a>)
       end
 
       def seinfeld
@@ -184,8 +189,8 @@ class Seinfeld
         prev_month = now << 1
         next_month = now >> 1
         calendar :year => now.year, :month => now.month,
-          :previous_month_text => %(<a href="/~#{@user.login}/#{prev_month.year}/#{prev_month.month}">Previous Month</a>), 
-          :next_month_text     => %(<a href="/~#{@user.login}/#{next_month.year}/#{next_month.month}" class="next">Next Month</a>) do |d|
+          :previous_month_text => %(<a href="/~#{@user.login}/#{prev_month.year}/#{prev_month.month}">Previous</a>), 
+          :next_month_text     => %(<a href="/~#{@user.login}/#{next_month.year}/#{next_month.month}" class="next">Next</a>) do |d|
           if @progressions.include? d
             [d.mday, {:class => "progressed"}]
           else
@@ -199,8 +204,8 @@ class Seinfeld
         prev_month = now << 1
         next_month = now >> 1
         calendar :year => now.year, :month => now.month,
-          :previous_month_text => %(<a href="/group/#{params[:names]}/#{prev_month.year}/#{prev_month.month}">Previous Month</a>), 
-          :next_month_text     => %(<a href="/group/#{params[:names]}/#{next_month.year}/#{next_month.month}" class="next">Next Month</a>) do |d|
+          :previous_month_text => %(<a href="/group/#{params[:names]}/#{prev_month.year}/#{prev_month.month}">Previous</a>), 
+          :next_month_text     => %(<a href="/group/#{params[:names]}/#{next_month.year}/#{next_month.month}" class="next">Next</a>) do |d|
           if @progressions.include? d
             [d.mday, {:class => "progressed"}]
           else

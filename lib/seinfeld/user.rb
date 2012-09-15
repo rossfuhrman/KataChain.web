@@ -10,6 +10,7 @@ class Seinfeld
 
     scope :active,              where(:disabled => false)
     scope :best_current_streak, where('current_streak > 0').order('current_streak desc, login').limit(15)
+    scope :best_60_streak, where('longest_streak >= 60').order('longest_streak_end desc, login').limit(15)
     scope :best_alltime_streak, where('longest_streak > 0').order('longest_streak desc, login').limit(15)
 
     def self.paginated_each(limit = 30)

@@ -37,7 +37,7 @@ a img{ border:none; }
 
 body{
   font-size:12px;
-  font-family: "Futura", "Gill Sans", Arial, sans-serif;
+  font-family: "Verdana", Lucida Console", Arial, sans-serif;
 }
 
 .title, .subtitle{
@@ -65,7 +65,7 @@ body{
   float:left;
 }
 .current_streak, .longest_streak{
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Century Gothic, Arial, sans-serif;
   text-transform:none;
 }
 
@@ -87,7 +87,7 @@ body{
 .num{
   display:block;
   font-size:30px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Century Gothic, Arial, sans-serif;
   color:#000;
   font-weight:bold;
   letter-spacing:-3px;
@@ -129,11 +129,16 @@ a{
   width: 700px;
 }
 
-#recentUsers, #userRecords{
+#recentUsers, #sixtyUsers, #userRecords{
   width:340px;
 }
 
 #recentUsers{
+  float:left;
+  padding-right: 10px;
+}
+
+#sixtyUsers{
   float:left;
   padding-right: 10px;
 }
@@ -147,7 +152,7 @@ a{
   text-align:right;
   font-size:11px;
   color:#666;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Century Gothic, Arial, sans-serif;
   line-height:16px;
 }
 .footnote a{
@@ -180,10 +185,10 @@ a{
 
 #calendar table th.monthName{
   padding:10px 0;
-  font-size:48px;
+  font-size:38px;
   letter-spacing:5px;
   text-transform:uppercase;
-  color:#b20000;
+  color:#000000;
 }
 #calendar table th a{
   display:block;
@@ -245,25 +250,21 @@ tr.dayname abbr{
   @group X Styles
 ------------------------------------------------------------------------------------*/
 
-.otherMonth .xmarksthespot{
+.otherMonth .chainlink{
   opacity:0.2;
 }
 
-.xmarksthespot{
+.chainlink{
   width:100px;
   height:60px;
   position:relative;
-  float:left;
-  margin-top:-60px;
+  float:none;
+  margin-top:-50px;
   z-index:100;
-  background:url(../images/x_1.png) 60% 100% no-repeat;
+  background:url(../images/chain.png) 60% 100% no-repeat;
 }
 
-.x-1{ background-image:url(../images/x_1.png);}
-.x-2{ background-image:url(../images/x_2.png);}
-.x-3{ background-image:url(../images/x_3.png);}
-
 .today {
-  color: green;
+  color: blue;
 }
 /* @end */

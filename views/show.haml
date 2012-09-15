@@ -4,6 +4,8 @@
       = page_title
     %link{:rel => 'icon', :type => 'image/png', :href => '/images/x_1.png', :sizes => '48x48'}
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/main.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/bootstrap.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/styles/bootstrap-responsive.css'}
     %script{:type => 'text/javascript', :src => '/javascripts/mootools.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/application.js'}
   %body
@@ -11,21 +13,19 @@
       %a{:rel => "me", :href => "https://github.com/#{@user.login}"}
         == #{@user.login}'s
       Calendar
-    .subtitle Tracking Open Source Contributions
+    .subtitle Tracking Code Katas on GitHub
     #calendar
       = seinfeld
     #main
       #zone
-        Location: 
+        Time left today:
+        == #{@user.time_left}
+        |
         == "#{@user.location}"
         %a{:rel => "me", :href => "http://github.com/#{@user.login}"}
           (from profile page)
         |
-        Zone:
         == "#{@user.time_zone}" 
-        |
-        Time left today:
-        == #{@user.time_left}
       #stats
         .current_streak
           %span.type
@@ -41,12 +41,12 @@
               = @user.longest_streak
               %span.desc days
       #content.footnote 
-        %a{:href => "http://calendaraboutnothing.com"} Calendar About Nothing
-        by <a href="http://techno-weenie.net">rick</a> and <a href="http://warpspire.com/">kyle</a> / <a href="https://github.com">GitHub</a>
+        %a{:href => "http://katacha.in"} KataCha.in
+        by <a href="https://github.com/rossfuhrman">ross</a>
       #content.footnote 
-        Put the 
-        %a{:href=> "/~#{@user.login}/widget"} JavaScript widget
-        on your site!
+        inspired by the work of <a href="http://techno-weenie.net">rick</a> and <a href="http://warpspire.com/">kyle</a> / <a href="https://github.com">GitHub</a>
+        on the 
+        %a{:href => "http://calendaraboutnothing.com"} Calendar About Nothing
       #content.footnote
         Geographical information provided by 
         %a{:href => 'http://www.geonames.org'} GeoNames

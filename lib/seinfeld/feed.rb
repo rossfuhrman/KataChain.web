@@ -8,7 +8,7 @@ class Seinfeld
       attr_accessor :user_agent
       attr_writer   :connection
     end
-    self.user_agent = 'Calendar About Nothing: https://github.com/technoweenie/seinfeld'
+    self.user_agent = 'Kata Chain: https://github.com/katachain/katachain'
 
     # A Array of Hashes of the parsed event JSON.
     attr_reader :items
@@ -31,14 +31,14 @@ class Seinfeld
       end
     end
 
-    # Public: Downloads a user's public feed from GitHub.
+    # Public: Downloads a user's activity on the katachain fork from GitHub.
     #
     # login - String login name from GitHub.
     #
     # Returns Seinfeld::Feed instance.
     def self.fetch(login, page = nil)
       user = login.is_a?(User) ? login : User.new(:login => login.to_s)
-      url = "https://api.github.com/users/#{user.login}/events"
+      url = "https://api.github.com/repos/#{user.login}/katachain/events"
       resp = connection.get url do |req|
         req.headers['If-None-Match'] = user.etag
         req.params['page'] = (page || 1).to_s

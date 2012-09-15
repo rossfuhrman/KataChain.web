@@ -2,7 +2,7 @@ class Seinfeld
   module Views
     class Auth < Layout
       def html_title
-        'Calendar About Nothing'
+        'Kata Chain'
       end
 
       alias page_title html_title

@@ -1,22 +1,20 @@
-<div class="subtitle">Tracking Open Source Contributions</div>
+<div class="subtitle">Code Katas</div>
 
 <div id="borderedMain">
   <div id="content">
 {{#anon}}
-    <h1>Are you ready?</h1>
+    <h1>Ready?</h1>
     <form action="/create" method="post">
       <p>
-        You are just <em>one step away</em> from joining an amazing community of
-        <a href="https://github.com">GitHub</a> open source developers.  Click this,
-        and CAN will start tracking your daily open source progress.
+        You are just <em>one step away.</em> Click this,
+        and we will start tracking your daily code katas.
       </p>
-      <p><input type="submit" value="Awesome" /></p>
+      <p><input type="submit" value="Start Tracking" /></p>
     </form>
 {{/anon}}
 
 {{#user}}
-    <h2>Hey, you already have a Calendar.</h2>
-    <p><a href="/~{{ login }}">Rock on.</a></p>
+    <h2>Hey, you already have a <a href="/~{{ login }}">Calendar.</a></h2>
 {{/user}}
   </div>
 </div>
