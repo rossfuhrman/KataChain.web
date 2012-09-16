@@ -35,30 +35,21 @@
       .span4
         %h4 Current Streaks
         %ul
-          %li 3
-          %li 3
-          %li 3
-          %li 3
-          %li 3
-          %li 3
+          - @recent_users.each do |user|
+            %li
+              = link_to_user user
       .span4
         %h4 60 Day Club
         %ul
-          %li bob
-          %li bob
-          %li bob
-          %li bob
-          %li bob
-          %li bob
+          - @sixty_users.each do |user|
+            %li
+              = link_to_user user
       .span4
         %h4 Longest Streaks
         %ul
-          %li 999
-          %li 999
-          %li 999
-          %li 999
-          %li 999
-          %li 999
+          - @alltime_users.each do |user|
+            %li
+              = link_to_user user, :longest_streak
     .row
       .span12
         %h2 How can I help?
