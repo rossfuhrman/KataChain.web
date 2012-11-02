@@ -2,7 +2,7 @@ class Seinfeld
   module Views
     class Layout < Mustache
       def html_title
-        s = 'Calendar About Nothing'
+        s = 'Kata Chain'
         if login = @login || (@user && @user.login)
           s.replace "#{login}'s #{s}"
         end

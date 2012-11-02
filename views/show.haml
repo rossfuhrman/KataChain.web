@@ -14,6 +14,17 @@
         == #{@user.login}'s
       Calendar
     .subtitle Tracking Code Katas on GitHub
+    #main
+      #stats
+        .current_streak
+          Current Streak:
+          = @user.current_streak
+          %span.desc 
+        .longest_streak
+          %a{:href => @user.longest_streak_url}
+            Longest Streak:
+            = @user.longest_streak
+            %span.desc 
     #calendar
       = seinfeld
     #main
@@ -26,20 +37,6 @@
           (from profile page)
         |
         == "#{@user.time_zone}" 
-      #stats
-        .current_streak
-          %span.type
-            current streak
-          %span.num
-            = @user.current_streak
-            %span.desc days
-        .longest_streak
-          %a{:href => @user.longest_streak_url}
-            %span.type
-              longest streak
-            %span.num
-              = @user.longest_streak
-              %span.desc days
       #content.footnote 
         %a{:href => "http://katacha.in"} KataCha.in
         by <a href="https://github.com/rossfuhrman">ross</a>
@@ -50,3 +47,4 @@
       #content.footnote
         Geographical information provided by 
         %a{:href => 'http://www.geonames.org'} GeoNames
+

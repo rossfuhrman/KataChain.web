@@ -37,7 +37,6 @@ a img{ border:none; }
 
 body{
   font-size:12px;
-  font-family: "Verdana", Lucida Console", Arial, sans-serif;
 }
 
 .title, .subtitle{
@@ -47,38 +46,30 @@ body{
 }
 
 .title{
-  margin-top:30px;
+  margin-top:10px;
   font-size:20px;
-  color:#000;
   text-transform:uppercase;
-  letter-spacing:3px;
+  letter-spacing:1px;
 }
 .subtitle{
   margin-top:5px;
-  text-transform:uppercase;
-  font-size:11px;
-  color:#999;
+  font-size:14px;
 }
 
 .current_streak, .longest_streak{
   width:150px;
-  float:left;
-}
-.current_streak, .longest_streak{
-  font-family: Century Gothic, Arial, sans-serif;
-  text-transform:none;
+  float:left
 }
 
 #zone {
-  background: #DFDFDF;
-  margin: 5px 0px 10px 0px;
+  background:#DFDFDF;
   padding: 5px 0px 5px 0px;
   text-align: center;
 }
 
 .type{
   display:block;
-  font-size:10px;
+  font-size:12px;
   margin-bottom:2px;
   color:#999;
   text-transform:uppercase;
@@ -91,6 +82,7 @@ body{
   color:#000;
   font-weight:bold;
   letter-spacing:-3px;
+  float:right;
 }
 .num .desc{
   position:relative;
@@ -166,77 +158,123 @@ a{
   @group Calendar Styles
 ------------------------------------------------------------------------------------*/
 
+
+
+
+
+
+
+
+
+
+/*
+A grey based theme, inspired by Blinksale and their ColorBurn widget. http://firewheeldesign.com
+AUTHOR: Geoffrey Grosenbach http://nubyonrails.com
+Colors:
+dk: 787888
+lt: 4f4f5b
+lter: a8a8a8
+white: ffffff
+*/
+
+/* TODO */
+
+.calendar {
+  margin: auto;
+  color: black;
+  text-align: center;
+}
+
+
+
+
 #calendar, #widget{
   margin:30px auto 15px auto;
-  padding:0 0 20px 0;
-  width:700px;
-  background:#fff;
-  font-size:24px;
-  border-top:2px solid #000;
-  border-bottom:1px solid #000;
 }
-
-
 #calendar table{
-  width:700px;
-  border-spacing:none;
-  border-collapse:collapse;
-}
-
-#calendar table th.monthName{
-  padding:10px 0;
-  font-size:38px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:#000000;
 }
 #calendar table th a{
-  display:block;
-  color:#00538d;
-  font-weight:normal;
-  text-align:left;
-  text-decoration:none;
-  font-size:11px;
-  text-transform:uppercase;
 }
-#calendar table th a.next{ text-align:right; }
-
 #calendar table td{
-  position:relative;
-  text-align:center;
   font-size:36px;
-  font-weight:bold;
   width:100px;
   height:60px;
 }
-#calendar table td.otherMonth{
-  color:#ccc;
+
+
+
+
+thead tr {
+  color: black;
 }
 
-#widget form {
-  width:700px;
-  margin:0; padding:0;
+.monthName th {
+  font-weight: normal;
+  font-size: 24px;
+  text-align: right;
+  padding-top: 1em;
+  padding-bottom: 0.7em;
+  color: black;
 }
 
-#widget p{
-  font-size: 12px;
+.dayName th {
+  font-size: 0.7em;
+  padding-top: 0.6em;
+  padding-bottom: 0.3em;
+  background-color: #303030;
+  color: white;
+  border-bottom: 1px solid white;
 }
 
-#widget textarea {
-  width:400px;
-  height:150px;
-  margin:0 150px;
+.otherMonth, .day, .specialDay {
 }
+
+
+.day, .specialDay {
+  border-bottom: 1px solid #111111;
+  background-color: #333333;
+}
+.specialDay {
+  background-color: #a8a8a8;
+  color: black;
+}
+.specialDay a, .specialDay a:visited, .specialDay a:hover {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+}
+.specialDay a:hover {
+  color: white;
+  background-color: black;
+}
+.weekendDay {
+  background-color: #787888;
+}
+.today {
+  background-color: white;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 tr.dayname th{
   width:100px;
   padding:5px 0;
   text-transform:uppercase;
   font-size:12px;
-  color:#666;
   font-weight:normal;
   letter-spacing:2px;
-  border:1px solid #eee;
   border-left:none;
   border-right:none;
 }
@@ -257,6 +295,16 @@ tr.dayname abbr{
 .chainlink{
   width:100px;
   height:60px;
+  position:relative;
+  float:none;
+  margin-top:-50px;
+  z-index:100;
+  background:url(../images/chain.png) 60% 100% no-repeat;
+}
+
+.chainlinkicon{
+  width:25px;
+  height:15px;
   position:relative;
   float:none;
   margin-top:-50px;
